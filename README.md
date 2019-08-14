@@ -1,9 +1,9 @@
 # VirtoCommerce-InitProject
-Simple tool for automate developing process. This tool automate clone, update and make symlinks for our virtocommerce modules/storefront/theme.
+Simple tool for automate VirtoCommerce platform developing process. This tool automate clone, update, build and make symlinks for our virtocommerce modules/storefront/theme.
 
 ## Usage
 1. Run `npm install`;
-2. Update information in 'directories.json`, 'secrets.json', 'iis-settings.json', 'build-settings.json' and 'repositories.json' if needed.
+2. Update information in `directories.json`, `secrets.json`, `iis-settings.json`, `build-settings.json` and `repositories.json` if needed.
    
 * `npm run init` for clone all repositories
 * `npm run update` for update dev/qa branches 
