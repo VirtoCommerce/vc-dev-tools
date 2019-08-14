@@ -7,5 +7,5 @@ Simple tool for automate developing process. This tool automate clone, update an
    
 * `npm run init` for clone all repositories
 * `npm run update` for update dev/qa branches 
-* `npm run restart-iis` for restart iis (recycle application pool)
-* `npm run mklinks` for create mklinks for modules in platform repository (last should be run with admin permissions);
+* `npm run restart-iis` for restart iis/recycle application pool (admin permissions needed)
+* `npm run mklinks` for create mklinks for modules in platform repository (admin permissions needed)
