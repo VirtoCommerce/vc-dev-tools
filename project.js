@@ -4,9 +4,9 @@ const git = require('simple-git')();
 const shell = require('shelljs');
 const chalk = require('chalk');
 
-// ENVIRONMENT should be configured in '.env' file.
+// CONFIG should be configured in '.env' file.
 require('dotenv').config();
-const config = require(`./config.${process.env.ENVIRONMENT}.json`);
+const config = require(`./config.${process.env.CONFIG}.json`);
 
 const args = process.argv.slice(2);
 
@@ -105,16 +105,21 @@ function createModulesSymlinks() {
 }
 
 function createSymlink(repository) {
-    const repositoryPath = getRepositoryPath(repository);
+    const newPath = getLinkPath(config.directories.platformModulesRoot, repository.name);
+	if (fs.existsSync(newPath)){
+		console.log(`Skipping existing: '${newPath}'`);
+	} else{
+		const repositoryPath = getRepositoryPath(repository);
 
-    const webDirs = fs.readdirSync(repositoryPath, { withFileTypes: true })
-        .filter(dirent => dirent.isDirectory() && dirent.name.endsWith('Web'))
-        .map(dirent => dirent.name);
+		const webDirs = fs.readdirSync(repositoryPath, { withFileTypes: true })
+			.filter(dirent => dirent.isDirectory() && dirent.name.endsWith('Web'))
+			.map(dirent => dirent.name);
+		
+        const target = path.join(repositoryPath, webDirs[0] || '');
+        console.log(target);
 
-    const target = path.join(repositoryPath, webDirs[0]);
-    console.log(target);
-        
-    fs.symlinkSync(target, getLinkPath(config.directories.platformModulesRoot, repository.name));
+		fs.symlinkSync(target, newPath, 'dir');
+	}
 }
 
 function getLinkPath(modulesRoot, moduleName) {
@@ -127,7 +132,7 @@ function getRepositoryPath(repository) {
 
 function getRepositoryUrl(repositoryUrl) {
     let url = new URL(repositoryUrl);
-    url.username = process.env.USERNAME;
+    url.username = process.env.LOGIN;
     url.password = process.env.PASSWORD;
 
     return url.href;

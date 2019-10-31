@@ -1,0 +1,60 @@
+{
+    "directories": {
+        "repositoriesRoot": "D:\\Repos\\vc\\",
+        "platformModulesRoot": "D:\\Repos\\vc\\vc-platform\\VirtoCommerce.Platform.Web\\Modules\\"
+    },
+
+    "build": {
+        "msbuildPath": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Professional\\MSBuild\\Current\\Bin\\msbuild.exe",
+        "nugetPath": ".\\bins\\nuget.exe"
+    },
+
+    "iis": {
+        "appcmdPath": "%SYSTEMROOT%\\System32\\inetsrv\\appcmd.exe",
+        "apppool": "vc-platform"
+    },
+
+    "branch": {
+        "development": "dev",
+        "release": "master",
+        "all": ["dev", "master"]
+    },
+
+    "repositories": [
+        {
+            "name": "vc-theme-default",
+            "type": "theme",
+            "url": "https://github.com/VirtoCommerce/vc-theme-default"
+        },
+        {
+            "name": "vc-storefront-core",
+            "type": "storefront",
+            "url": "https://github.com/VirtoCommerce/vc-storefront-core"
+        },
+        {
+            "name": "vc-module-core",
+            "type": "module",
+            "url": "https://github.com/VirtoCommerce/vc-module-core"
+        },
+        {
+            "name": "export",
+            "type": "module",
+            "url": "https://github.com/VirtoCommerce/vc-module-export"
+        },
+        {
+            "name": "inventory",
+            "type": "module",
+            "url": "https://github.com/VirtoCommerce/vc-module-inventory"
+        },
+        {
+            "name": "store",
+            "type": "module",
+            "url": "https://github.com/VirtoCommerce/vc-module-store"
+        },
+        {
+            "name": "vc-module-catalog",
+            "type": "module",
+            "url": "https://github.com/VirtoCommerce/vc-module-catalog"
+        }
+    ]
+}

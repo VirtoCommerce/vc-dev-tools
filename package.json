@@ -1,8 +1,12 @@
 {
-  "name": "virtocommerce-init-project",
+  "name": "vc-dev-tools",
   "version": "0.1.0",
-  "description": "",
+  "description": "Virto Commerce developer tools",
   "main": "project.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/VirtoCommerce/vc-dev-tools.git"
+  },
   "scripts": {
     "init": "node project.js init",
     "update": "node project.js update",
@@ -12,6 +16,9 @@
     "lint": "eslint"
   },
   "author": "Vitaly.Tartynov",
+  "contributors": [
+    "Egidijus Mazeika (https://github.com/eMazeika)"
+  ],
   "license": "",
   "dependencies": {
     "chalk": "^2.4.2",
